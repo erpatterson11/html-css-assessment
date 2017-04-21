@@ -1,3 +1,28 @@
+/*
+
+Content:
+- add CSS bounce animation to arrow
+
+Mobile:
+- make menu button fixed
+- enable dropdown menu on click
+- add js animation to click
+- add font color change to clicked menu items
+- add CSS animation to fade out social media icons when not
+    on top of page
+- add CSS animatioin to fade out menu button when scrolling down
+    and fade in menu button when scrolling up
+
+
+Desktop:
+- add on:hover dropshadow to menu text
+
+
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2:800');
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -24,18 +49,16 @@ body {
   width: 100vw;
   height: 100vh;
   color: #fff;
+  font-family: 'Exo 2', sans-serif;
 }
 
-.hero {
-  background-image: url("./img/foggyMountains.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: center;
+/* Nav bar
+=======================================================*/
+
+nav {
   width: 100vw;
-  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .nav_container {
@@ -56,11 +79,6 @@ body {
   justify-content: center;
 }
 
-.down_arrow_container {
-  flex-basis: 20%;
-}
-
-
 .nav_links {
   width: 100vw;
   height: 5vh;
@@ -70,11 +88,26 @@ body {
   align-items: center;
 }
 
-nav li.button {
+nav li {
   list-style: none;
   font-size: 2rem;
   flex-basis: 33.3333%;
   text-align: center;
+}
+
+/* Hero
+=======================================================*/
+
+.hero {
+  background-image: url("./img/main-bg.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .hero_text h1 {
@@ -89,23 +122,44 @@ nav li.button {
   text-transform: uppercase;
 }
 
-.link:hover, .link:focus {
+/* Arrow icon
+=======================================================*/
 
+.arrow_container {
+  flex-basis: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/*.mobile {
-  display: none;
-}*/
+.arrow_circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-@media (max-width: 700px) {
+.arrow_icon {
+  background-image: url("./img/arrow.svg");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+/* Mobile media query - navbar
+=======================================================*/
+
+@media (max-width: 750px) {
 
   .mobile {
     display: run-in;
   }
 
-  .nav_container {
-    height: 5vh;
-    min-height: 0px;
+  nav {
+    justify-content: space-between;
   }
 
   .twitter_logo {
@@ -133,17 +187,18 @@ nav li.button {
 
 
   .ham_button {
-    height: 5vh;
-    width: 5vh;
+    height: 60px;
+    width: 60px;
     display: inline-block;
     margin-left: 20px;
   }
 
-.ham_button .circle {
-    width: 5vh;
-    height: 5vh;
+  .ham_button .circle {
+    position: fixed;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: 3px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,16 +206,16 @@ nav li.button {
   }
 
   .line {
-    height: 1.5px;
-    width: 2.5vh;
-    margin: 1.5px 0;
+    height: 2.5px;
+    width: 30px;
+    margin: 3px 0;
     background-color: #fff;
     border-radius: 1px;
   }
 
   .nav_links {
-    /*display: none;*/
-    width: 100vw;
+    display: none;
+    /*width: 100vw;
     height: 20vh;
     padding-top: 1vh;
     min-height: 20vh;
@@ -168,7 +223,7 @@ nav li.button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
   }
 
   nav li.button {
@@ -178,7 +233,7 @@ nav li.button {
     text-align: center;
   }
 
-  .hero_text h1 {
+  /*.hero_text h1 {
     font-size: 3.5rem;
     font-weight: bold;
     flex-basis: 1;
@@ -188,5 +243,5 @@ nav li.button {
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
-  }
+  }*/
 }
